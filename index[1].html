@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pedido de Namoro ❤️</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Header -->
+<header>
+<a class="logo" href="#">
+<img alt="logo" src="IMG/logocoração.png.png"/>
+</a>
+<nav>
+<a href="#carrossel">Fotos</a>
+<a href="#promessa">Promessa</a>
+</nav>
+</header>
+<!-- Carrossel -->
+<section id="carrossel">
+<h2 class="title">Momentos com <span>você</span></h2>
+<div class="carrossel-container">
+<div class="carrossel">
+<img alt="foto1" src="IMG/foto1.jpg"/>
+<img alt="foto2" src="IMG/foto2.jpg"/>
+<img alt="foto3" src="IMG/foto3.jpg"/>
+<img alt="foto4" src="IMG/foto4.jpg"/>
+<img alt="foto5" src="IMG/foto5.jpg"/>
+<img alt="foto6" src="IMG/foto6.jpg"/>
+<img alt="foto7" src="IMG/foto7.jpg"/>
+</div>
+</div>
+</section>
+<!-- Conteúdo -->
+<div class="content">
+<h3>Minha Princesa ❤️</h3>
+<p>
+      Quando vi você pela primeira vez, achei você muito linda, mas não tive coragem de falar com você.  
+      O destino nos uniu novamente, e desde então eu soube que precisava tentar.  
+      A cada dia que passa, me apaixono ainda mais pelo seu coração, sua fé e sua luz que ilumina minha vida.  
+      Você é incrível, e quero caminhar com você em todos os momentos da vida.
+    </p>
+</div>
+<!-- Promessa -->
+<section id="promessa">
+<h2 class="title">PROMESSA DE <span>AMOR</span></h2>
+<div class="content">
+<p>
+        Prometo estar ao seu lado nos dias bons e ruins.  
+        Prometo cuidar do seu coração como se fosse o meu.  
+        Prometo ser seu porto seguro e companheiro de vida.  
+        Prometo não desistir de nós, pois sei que o amor verdadeiro supera tudo.  
+        Prometo amar você hoje, amanhã e sempre — como Cristo amou a Igreja.  
+      </p>
+</div>
+</section>
+<!-- Pedido -->
+<section class="pedido">
+<p>💍 Você aceita namorar comigo?</p>
+<div class="botoes">
+<button class="sim" onclick="alert('EU SABIA 😍❤️💍')">SIM</button>
+<button class="nao" id="nao">NÃO</button>
+</div>
+</section>
+<script>
+    // Carrossel automático
+    const carrossel = document.querySelector(".carrossel");
+    const imagens = document.querySelectorAll(".carrossel img");
+    let idx = 0;
+
+    function deslizar() {
+      idx++;
+      if (idx >= imagens.length) {
+        idx = 0;
+      }
+      carrossel.style.transform = `translateX(${-idx * 100}%)`;
+    }
+    setInterval(deslizar, 3000);
+
+    // Botão "NÃO" foge
+    const btnNao = document.getElementById('nao');
+    btnNao.addEventListener('mouseover', () => {
+      const x = Math.floor(Math.random() * 200) - 100;
+      const y = Math.floor(Math.random() * 200) - 100;
+      btnNao.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+</body>
+</html>
